@@ -25,7 +25,6 @@ function Post() {
               {post && 
                 <div className="main-post">
                   <div className="post-top-area">
-                    <h5 className="pre-title">Nest React Blog</h5>
                     <h3 className="title">
                       <span>
                         <b>{post.title}</b>

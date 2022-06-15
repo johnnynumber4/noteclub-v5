@@ -88,23 +88,23 @@ function Create(): JSX.Element {
 
       <form id={"create-post-form"} onSubmit={handleFormSubmission} noValidate={true}>
         <div className="form-group col-md-12">
-          <label htmlFor="title"> Title </label>
-          <input type="text" id="title" onChange={(e) => handleInputChanges(e)} name="title" className="form-control" placeholder="Enter title" />
+          <label htmlFor="title"> Album </label>
+          <input autoComplete="off" type="text" id="title" onChange={(e) => handleInputChanges(e)} name="title" className="form-control" placeholder="Enter Album" />
         </div>
 
         <div className="form-group col-md-12">
-          <label htmlFor="description"> Description </label>
-          <input type="text" id="description" onChange={(e) => handleInputChanges(e)} name="description" className="form-control" placeholder="Enter Description" />
+          <label htmlFor="description"> Artist </label>
+          <input autoComplete="off" type="text" id="description" onChange={(e) => handleInputChanges(e)} name="description" className="form-control" placeholder="Enter Artist" />
         </div>
 
         <div className="form-group col-md-12">
-          <label htmlFor="body"> Write Content </label>
-          <input type="text" id="body" onChange={(e) => handleInputChanges(e)} name="body" className="form-control" placeholder="Enter content" />
+          <label htmlFor="body"> Theme </label>
+          <input autoComplete="off" type="text" id="body" onChange={(e) => handleInputChanges(e)} name="body" className="form-control" placeholder="Enter theme" />
         </div>
 
         <div className="form-group col-md-12">
           <label htmlFor="author"> Author </label>
-          <input type="text" id="author" defaultValue={author} onChange={(e) => handleInputChanges(e)} name="author" className="form-control" />
+          <input disabled type="text" id="author" defaultValue={author} onChange={(e) => handleInputChanges(e)} name="author" className="form-control" />
         </div>
 
         <div className="form-group col-md-4 pull-right">

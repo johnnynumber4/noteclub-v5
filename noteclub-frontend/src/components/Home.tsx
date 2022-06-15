@@ -41,17 +41,17 @@ function Home():JSX.Element {
         <section className="blog-area section">
         <div className="container">
           <div className="row">
-            {posts && posts.map((post: { title: React.ReactNode; _id: any; author: any; }) => (
+            {posts && posts.map((post: { title: React.ReactNode; _id: any; author: any; albumArt: any; }) => (
               <div className="col-lg-4 col-md-6" key={post._id}>
               <div className="card h-100">
                 <div className="single-post post-style-1">
 
                   <div className="blog-image">
-                    <img src="https://res.cloudinary.com/yemiwebby-com-ng/image/upload/v1563149789/blog-image_psvipq.jpg" alt="Blog" />
+                    <img src={post.albumArt} alt="Blog" />
                   </div>
 
                   <span className="avatar">
-                    <img src="http://res.cloudinary.com/yemiwebby-com-ng/image/upload/v1513770253/WEB_FREAK_50PX-01_yaqxg7.png" alt="Profile" />
+                    {user && user.picture && <img src={user.picture} alt="My Avatar" />}
                   </span>
 
                   <div className="blog-info">
@@ -61,6 +61,21 @@ function Home():JSX.Element {
                         <b>{post.title}</b>
                       </span>
                     </h4>
+                    <li>
+                    <Link to={`/post/${post._id}`} className="btn btn-sm btn-outline-secondary">View Post </Link>
+                  </li>
+                  <li>
+                    {
+                      isAuthenticated && (user.name === post.author) &&
+                      <Link to={`/edit/${post._id}`} className="btn btn-sm btn-outline-secondary">Edit Post </Link>
+                    }
+                  </li>
+                  <li>
+                    {
+                      isAuthenticated && (user.name === post.author) &&
+                      <button className="btn btn-sm btn-outline-secondary" onClick={() => deletePost(post._id)}>Delete Post</button>
+                    }
+                  </li>
                   </div>
                 </div>
 
